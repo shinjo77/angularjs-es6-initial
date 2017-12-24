@@ -1,8 +1,12 @@
-require('angular');
+import 'bootstrap';
+import 'bootstrap/scss/bootstrap.scss';
 
-const app = angular.module('app', []);
+import angular from 'angular';
+import ngRoute from 'angular-route';
 
-app.controller('mainController', ['$scope', function ($scope) {
-    alert('test me4');
-    $scope.test3 = 'test me3';
-}]);
+import routing from './app.config';
+import homeController from './home/home.controller';
+
+angular.module('app', ['ngRoute'])
+    .controller('homeController', homeController)
+    .config(routing);
