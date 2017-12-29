@@ -1,16 +1,17 @@
 export default function route($locationProvider, $routeProvider) {
   
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('');
 
-//   $routeProvider.when('/login', {templateUrl: 'login/login.php',
-        //   controller : "loginController", reloadOnSearch: true})
+    $routeProvider
+    // .when('/login', {templateUrl: 'src/login/login.php', reloadOnSearch: true})
+    .when('/login', {templateUrl: 'src/login/login.php', reloadOnSearch: true})
 
-    $routeProvider.when('/home', {templateUrl: 'src/home/home.php', 
-        controller : "homeController", reloadOnSearch: true})
+    // .when('/home', {templateUrl: 'src/home/home.php', 
+    //     controller : "homeController", reloadOnSearch: true})
 
     .otherwise({
-        redirectTo: '/home'
+        redirectTo: '/login'
     });
 }
 

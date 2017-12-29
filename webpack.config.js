@@ -7,6 +7,7 @@ module.exports = {
       filename: 'app.bundle.js',
       path: __dirname + '/dist'
     },
+    devtool: 'source-map',
     plugins: [
         new webpack.ProvidePlugin({
           $: 'jquery',
@@ -30,7 +31,9 @@ module.exports = {
                 query: {
                   presets: ['@babel/preset-env']
                 }
-            },{
+            },
+            { test: /\.(php|html)$/, loader: "html" },
+            {
                 test: /\.json$/,
                 loader: 'json-loader',
                 exclude: /node_modules/

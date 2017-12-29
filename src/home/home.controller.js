@@ -1,7 +1,7 @@
 class homeController {
 
     constructor() {
-        alert('test1');
+        alert('test3');
         // this._title = title;
     }
 
