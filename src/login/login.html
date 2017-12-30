@@ -1,4 +1,44 @@
 <div class="container" id="mainView">
-    test me
-</div>
+    <form id="login_form" name="login_form" ng-submit="$ctrl.login()" validate>
 
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <div class="containBox clearfix text-center">
+                <!-- <img src="./img/logo.png" class="toplogo" width="400"> -->
+                <h3>Log in</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <div class="containBox clearfix">
+                <fieldset class="form-group">
+                    <label for="username">Email *</label>
+                    <input type="email" name="email" id="email" placeholder="Please enter your email address" ng-model="email" class="form-control sq-form-field" required />
+                    <span ng-show="$ctrl.login_form.email.$touched && $ctrl.login_form.email.$invalid" class="error"><small>Email is not registered, please review or register</small></span>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" name="password" id="password" ng-model="password" placeholder="Please enter your password" class="form-control sq-form-field" required />
+                    <span ng-show="$ctrl.login_form.password.$touched && $ctrl.login_form.password.$invalid" class="error"><small>Password is incorrect, please check and try again</small></span>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        <div class="col-md-8">
+            <div class="containBox clearfix text-center">
+                <p>
+                    <button class="btn btn-success" type="submit" ng-hide="processing" ng-disabled="$ctrl.login_form.$invalid">Log in</button>
+                    <button ng-show="processing" class="btn btn-primary" disabled>Processing ...</button>
+                </p>
+                
+                <!--<h3>New to icomp.li?</h3>-->
+                <p>
+                    <a href="./new_password" class="btn btn-outline-primary">Forgot log in? Reset Password</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
